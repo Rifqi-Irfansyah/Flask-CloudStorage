@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h2>Gallery Dashboard</h2>
+
+<div style="display:flex; gap:20px; flex-wrap:wrap;">
+    {% for g in galleries %}
+        <div>
+            <img src="{{ url_for('static', filename='uploads/' + g.filename) }}"
+                 width="200">
+            <p>{{ g.title }}</p>
+        </div>
+    {% endfor %}
+</div>
+
+{% endblock %}
