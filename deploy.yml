@@ -1,0 +1,30 @@
+name: Deploy Flask
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: SSH Deploy
+        uses: appleboy/ssh-action@v1.0.3
+
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          key: ${{ secrets.SSH_KEY }}
+
+          script: |
+            cd /home/rifqi/flask-storage
+
+            git pull origin main
+
+            source venv/bin/activate
+
+            pip install -r requirements.txt
+
+            sudo systemctl restart flaskapp

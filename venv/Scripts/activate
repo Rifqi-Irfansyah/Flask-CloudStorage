@@ -38,7 +38,7 @@ deactivate () {
 # unset irrelevant variables
 deactivate nondestructive
 
-VIRTUAL_ENV="D:\Rifqi Irfansyah\KULIAH\Semester 6\Cloud Praktek\Project Storage Cloud\venv"
+VIRTUAL_ENV="D:\Rifqi Irfansyah\KULIAH\Semester 6\Cloud Praktek\Project Storage\Flask-CloudStorage\venv"
 export VIRTUAL_ENV
 
 _OLD_VIRTUAL_PATH="$PATH"
